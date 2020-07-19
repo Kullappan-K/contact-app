@@ -1,0 +1,40 @@
+.msgBox{
+    background: white;
+    border-radius: 20px;
+    padding: 5px 20px;
+    color: white;
+    display: inline-block;
+    max-width: 80%;
+}
+.msgText{
+    width: 100%;
+    letter-spacing: 0;
+    float: left;
+    font-size: 1.1em;
+    word-wrap:break-word ;
+}
+.msgContainer{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 5%;
+    margin-top: 3px;
+}
+.sentText{
+    display: flex;
+    align-items: center;
+    color: #e6e1e1;
+    letter-spacing: 0.5px;
+}
+.end{
+    justify-content: flex-end;
+}
+.start{
+    justify-content: flex-start;
+}
+.red{
+    background: red;
+}
+.light{
+    color: black;
+    background: rgb(218, 216, 216);
+}

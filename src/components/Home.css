@@ -1,0 +1,261 @@
+body{
+    margin: 0px;
+}
+.contact_container{
+    width: 100%;
+    height: 100%;
+}
+.contact_menu_div{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: inline-block;
+    background-color: white;
+    z-index: 100;
+}
+.contact_menu_bar{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px #c2c2c2;
+}
+.contact_list_div{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    top: 10px;
+}
+.cf_content_container{
+    position: relative;
+    padding-top: 20px;
+    margin-left: 3px;
+    display: inline-block;
+}
+.cf_content_card{
+    position: relative;
+    width: 600px;
+  height: 150px;
+  background-color: #1E2B32;
+  border-radius: 10px 10px;
+}
+.cf_content_header{
+    position: relative;
+    border-radius: 10px 10px 0px 0px;
+  padding: 5px;
+  background-color: #2A3942;
+}
+h3{
+    color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+  margin-left: 1rem;
+}
+.iconM{
+    font-size: 18px;
+    margin-left: 220px;
+    color: orangered;
+}
+.icon{
+    margin-right: 8px;
+  }
+.icon_header{
+    margin-left: 150px;
+}
+.submenu_collapse{
+    display: none;
+}
+.submenu_expand{
+    display:block;
+}
+.submenu_anim{
+    transition: ease-in-out 5s;
+}
+  
+/*.cf_sidemenu_container div{
+    width: 600px;
+    height: auto;
+    transition: 1s all;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    padding: 15px;
+    margin-left: -40px;
+    margin-top: 0px;
+    color: #fff;
+    display: block;
+    border-top-right-radius: 10px 10px;
+    border-bottom-right-radius: 10px 10px;
+}*/
+.c_column{
+    position: relative;
+    width: 590px;
+    height: auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #fff;
+    display: inline-block;
+    padding-left: 10px;
+    border-top-right-radius: 10px 10px;
+    border-bottom-right-radius: 10px 10px;
+    background-color: #1E2B32;
+}
+.row ::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.col_name{
+    position: relative;
+    display: inline-block;
+    left: 20px;
+}
+.col_email{
+    position: relative;
+    left: 100px;
+    display: inline-block;
+    font-size: smaller;
+}
+.round{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    display: inline-block;
+    border: 1px solid white;
+}
+.col_edit, .col_chat, .col_view{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    left: 150px;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: white;
+}
+.col_edit, .col_chat, .col_view:focus{
+    outline: none;
+}
+.col_edit:hover{ 
+    color: red;
+}
+.col_chat:hover{
+    color: red;
+}
+.col_view:hover{
+    color: red;
+}
+.contact_display{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    display: inline-block;
+    float: right;
+    margin-right: 100px;
+    border: 1px solid black;
+    background-color: #1E2B32;
+    border: 10px solid #1E2B32;
+    border-radius: 50px;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: inline-block;
+}
+.contact_add{
+    position: relative;
+    float: right;
+}
+.add_button{
+    color: white;
+    background-color: red;
+    border: 2px solid red;
+}
+.contact_edit_img{
+    position: absolute;
+    align-items: center;
+    border: 1px solid white;
+}
+.round_add{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    display: inline-block;
+}
+.contact_name{
+    position: relative;
+    display: block;
+    top: 30px;
+}
+.textbox{
+    width: 400px;
+    height: 20px;
+    border: none;
+    color: white;
+    font-size: large;
+    padding: 20px;
+    background-color: transparent;
+    border-bottom:  1px solid white;
+}
+.textbox:focus{
+    outline: none;
+}
+::placeholder{
+    color: rgb(161, 160, 161);
+}
+.save_button{
+    position: relative;
+    width: 100px;
+    height: 50px;
+    top: 30px;
+    color: white;
+    display: inline-block;
+    border: 1px solid #1E2B32;
+    background-color: red;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.out:focus{
+    outline: none;
+}
+.username{
+    position: relative;
+    display: block;
+    width: 150px;
+    height: 30px;
+    padding: 15px;
+    background-color: red;
+    color: white;
+    float: right;
+    margin-right: 10%;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+.drp-contact{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.list_remove li{
+    color: black;
+    width: 150px;
+    list-style: none;
+    display: block;
+    margin-left: 0px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.username:hover .drp-contact{
+    display: block;
+}
+.left{
+    margin-left: 30px;
+    padding: 20px;
+    cursor: pointer;
+}

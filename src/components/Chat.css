@@ -1,0 +1,30 @@
+.outerContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120vh;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 8px;
+    height: 60%;
+    width: 35%;
+    border-left: 2px solid red;
+    border-right: 2px solid red;
+}
+.start_chat{
+    display: block;
+    padding: 10px;
+    background: red;
+    border-radius: 10px;
+    border:none;
+    color:white;
+    text-decoration: none;
+    cursor:pointer;
+}
+::dialog{
+    border : none;
+}
