@@ -16,7 +16,7 @@ const Chat = ({location}) => {
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
 
-    const SERVER = 'localhost:5000';
+    const SERVER = 'http://Kullappan-K.github.io/contact-sever';
 
     useEffect(() => {
         const {name, room} = queryString.parse(location.search);
