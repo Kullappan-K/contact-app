@@ -1,59 +1,64 @@
-import React, { useState } from 'react';
-import {Link} from 'react-router-dom';
+import React, { useEffect, useState, Component, useLayoutEffect } from 'react';
+import queryString from 'query-string';
+import io from 'socket.io-client';
 
-import Dialog from './Dialog';
+import Sidemenu from './Sidemenu';
+import ContactList from './ContactList';
 
 import './Home.css';
 import 'font-awesome/css/font-awesome.min.css';
+import MenuBar from './MenuBar';
 
-const Home = () => {
+let socket;
+const Home = ({location}) => {
+
+    var contactList = ['Alex', 'Harris', 'Josh', 'Michael', 'John', 'Chris'];
 
     const [name, setName] = useState('');
-    const [room, setRoom] = useState('');
+    const [room, setRoom] = useState('1');
+    const [contact, setContact] = useState([]);
+    const [active, setActiveUser] = useState('');
+    const SERVER = 'localhost:5000';
 
-    function getInfo(){
-          return(
-              <Dialog />
-          )
-    };
+    function removeStaticUser(contactList, active){
+        return contactList.filter((value) => {
+            return active.indexOf(value.trim().toLowerCase()) === -1;
+        });
+    }
+    
+    useEffect(() => {
+        const {name} = queryString.parse(location.search);
+
+        socket = io(SERVER);
+        setName(name);
+
+        socket.emit('join', {name, room}, (data)=> {
+            setActiveUser(data);
+            setContact(removeStaticUser(contactList, data));
+        });
+        return() => {
+            socket.emit('disconnect');
+            socket.off();
+        }
+
+    }, [SERVER, location.search]);
 
     return(
-        
         <div>
+        <div className="menu_container">
+        <div className="sidemenu_div">
+        <Sidemenu name={name}/>
+        </div>
+        <MenuBar name={name} contactList={contact}/>
+        </div>
         <div className="contact_container">
-      <div className="contact_menu_div">
-          <div className="contact_menu_div">
-          
-              <div className="contact_menu_bar">
-              <Dialog />
-                  <div className="username">Hi, Alex <i className="fa fa-angle-down"></i>
-                      <div className="drp-contact ">
-                      <div className="list_remove">
-                      <Link to={`/chat?name=${name}&room=1`} target="_blank" ><button  className="left" onMouseOver={(event) => {setName(event.target.textContent);setRoom(event.target.textContent);}}>Harris</button>
-                          <button className="left" onMouseOver={(event) => {setName(event.target.textContent);}}>Josh</button>
-                          </Link>
-                      </div>	
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
       <div className="contact_list_div">
           <div className="cf_content_container">
               <div className="cf_content_card">
                   <div className="cf_content_header">
                       <h3>Contacts</h3>
                   </div>
-                      <div className="c_column">
-                      <div className="row">
-                          <img className="round"/>
-                          <h5 className="col_name">Kullappan K</h5>
-                          <p className="col_email">kullappan@gmail.com</p>
-                          <button className="col_edit fa fa-pencil"></button>
-                          <button className="col_chat fa fa-comments-o"></button>
-                          <button className="col_view fa fa-eye"></button>
-                      </div>
-                  </div>
+                      <ContactList contactList={contact} />
               </div>
           </div>
           <span className="contact_display">
@@ -69,11 +74,7 @@ const Home = () => {
             </span>
       </div>
   </div>
-  <div className="contact_add">
-      <button className="round add_button fa fa-plus"></button>
-  </div>
   </div>
     )
 }
-
 export default Home;

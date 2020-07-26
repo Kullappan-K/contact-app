@@ -1,0 +1,14 @@
+import React, { useState } from 'react';
+
+import { Link, Redirect } from 'react-router-dom';
+
+const Login = () => {
+
+    return (
+        <div>
+        <Redirect to={'/home?name=Alex'}></Redirect>
+        </div>
+    );
+    
+}
+export default Login;

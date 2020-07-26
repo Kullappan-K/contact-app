@@ -2,16 +2,21 @@ body{
     margin: 0px;
 }
 .contact_container{
-    width: 100%;
     height: 100%;
+    display: inline-block;
+    margin-left: 72px;
 }
 .contact_menu_div{
-    width: 100%;
+    width: 94%;
     height: 100%;
     position: relative;
     display: inline-block;
     background-color: white;
     z-index: 100;
+    margin-left: 75px;
+}
+.menu_container{
+    position: relative;
 }
 .contact_menu_bar{
     position: relative;
@@ -19,18 +24,19 @@ body{
     height: 100px;
     border-radius: 3px;
     box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #c2c2c2;
     box-shadow: 1px 1px #c2c2c2;
 }
 .contact_list_div{
     position: relative;
     width: 100%;
-    height: 100px;
+    height: auto;
     top: 10px;
 }
 .cf_content_container{
     position: relative;
     padding-top: 20px;
-    margin-left: 3px;
     display: inline-block;
 }
 .cf_content_card{
@@ -71,21 +77,6 @@ h3{
 .submenu_anim{
     transition: ease-in-out 5s;
 }
-  
-/*.cf_sidemenu_container div{
-    width: 600px;
-    height: auto;
-    transition: 1s all;
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    padding: 15px;
-    margin-left: -40px;
-    margin-top: 0px;
-    color: #fff;
-    display: block;
-    border-top-right-radius: 10px 10px;
-    border-bottom-right-radius: 10px 10px;
-}*/
 .c_column{
     position: relative;
     width: 590px;
@@ -110,6 +101,7 @@ h3{
     left: 20px;
 }
 .col_email{
+    width: 150px;
     position: relative;
     left: 100px;
     display: inline-block;
@@ -152,7 +144,7 @@ h3{
     height: 500px;
     display: inline-block;
     float: right;
-    margin-right: 100px;
+    margin-left: 50px;
     border: 1px solid black;
     background-color: #1E2B32;
     border: 10px solid #1E2B32;
@@ -230,6 +222,7 @@ h3{
     background-color: red;
     color: white;
     float: right;
+    font-size: large;
     margin-right: 10%;
     border: 1px solid red;
     border-radius: 5px;
@@ -240,6 +233,8 @@ h3{
     background-color: #f1f1f1;
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px;
     z-index: 1;
 }
 .list_remove li{
@@ -255,7 +250,43 @@ h3{
     display: block;
 }
 .left{
-    margin-left: 30px;
-    padding: 20px;
+    width: 150px;
+    height: 50px;
+    border: none;
+    display: block;
+    border-bottom: 1px solid #2A3942;
     cursor: pointer;
+}
+.left:hover{
+    transition: 1.5s all;
+    border-bottom: 1px solid red;
+    color: red;
+}
+.link_remove{
+    text-decoration: none;
+}
+.sidemenu_div{
+    height: 500px;
+    position: fixed;
+    display: inline-block;
+}
+.contact_home{
+    padding: 15px;
+    border: 1px solid white;
+    border-radius: 100%;
+    margin: 10px;
+}
+.side_container{
+    width: 50px;
+    height: 700px;
+    padding: 10px;
+    border: 1px solid red;
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.sidemenu_link{
+    color:white;
+    text-decoration: none;
 }
