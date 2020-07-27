@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Component, useLayoutEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import queryString from 'query-string';
 import io from 'socket.io-client';
 
@@ -72,6 +72,9 @@ const Home = ({location}) => {
               </div>
             </span>
       </div>
+      </div>
+      <div className="contact_add">
+      <button className="round add_button fa fa-plus"></button>
   </div>
   </div>
     )

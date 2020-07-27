@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
-import RandomColor from 'randomcolor';
 
 const ContactList =({contactList}) => {
-
-    const[color, setColor] = useState('');
 
     return(
     <div className="c_column">

@@ -159,6 +159,9 @@ h3{
 .contact_add{
     position: relative;
     float: right;
+    align-items: baseline;
+    margin-top: 470px;
+    margin-right: 70px;
 }
 .add_button{
     color: white;
