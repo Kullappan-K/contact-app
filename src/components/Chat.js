@@ -19,7 +19,8 @@ const Chat = ({location}) => {
 
     const [name, setName] = useState('');
     const [room, setRoom] = useState('');
-    const [active, setActiveUser] = useState([]);
+    const [contact, setActiveUser] = useState([]);
+    const [active, setContact] = useState([]);
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
 
@@ -42,7 +43,15 @@ const Chat = ({location}) => {
         setRoom(room);
 
         socket.emit('join', {name, room}, (data)=> {
+            //setActiveUser(data);
+        });
+
+        socket.emit('chatActiveUser', {name}, (data)=> {
             setActiveUser(data);
+        });
+
+        socket.emit('getAllUser', {name},(data)=> {
+            setContact(data);
         });
 
         return() => {
@@ -65,10 +74,6 @@ const Chat = ({location}) => {
             socket.emit('sendMessage', message, ()=> setMessage(''));
         }
     };
-    if(active !== undefined){
-    contactList = removeStaticUser(contactList, name);
-    console.log(contactList);
-    }
 
     return(
         <div>
@@ -76,7 +81,7 @@ const Chat = ({location}) => {
         <div className="sidemenu_div">
         <Sidemenu name={name}/>
         </div>
-        <MenuBar name={name} contactList={contactList}/>
+        <MenuBar name={name} contactList={active}/>
         </div>
         
         <div className="contact_content_container">
@@ -84,7 +89,7 @@ const Chat = ({location}) => {
                   <div className="contact_content_header">
                       <h3>Contacts</h3>
                   </div>
-                      <ChatContactList contactList={contactList} />
+                      <ChatContactList contactList={contact} />
               </div>
           </div>
         <span className="chat_main">

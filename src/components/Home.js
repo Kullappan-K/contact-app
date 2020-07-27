@@ -10,21 +10,13 @@ import 'font-awesome/css/font-awesome.min.css';
 import MenuBar from './MenuBar';
 
 let socket;
+let contactList = [];
+
 const Home = ({location}) => {
 
-    var contactList = ['Alex', 'Harris', 'Josh', 'Michael', 'John', 'Chris'];
-
     const [name, setName] = useState('');
-    const [room, setRoom] = useState('1');
     const [contact, setContact] = useState([]);
-    const [active, setActiveUser] = useState('');
     const SERVER = 'localhost:5000';
-
-    function removeStaticUser(contactList, active){
-        return contactList.filter((value) => {
-            return active.indexOf(value.trim().toLowerCase()) === -1;
-        });
-    }
     
     useEffect(() => {
         const {name} = queryString.parse(location.search);
@@ -32,9 +24,8 @@ const Home = ({location}) => {
         socket = io(SERVER);
         setName(name);
 
-        socket.emit('join', {name, room}, (data)=> {
-            setActiveUser(data);
-            setContact(removeStaticUser(contactList, data));
+        socket.emit('getAllUser', {name},(data)=> {
+            setContact(data);
         });
         return() => {
             socket.emit('disconnect');
@@ -43,13 +34,21 @@ const Home = ({location}) => {
 
     }, [SERVER, location.search]);
 
+    useEffect(() => {
+
+        socket.emit('getAllUser', {name},(data)=> {
+            setContact(data);
+        });
+
+    }, [contact, location.search]);
+
     return(
         <div>
         <div className="menu_container">
         <div className="sidemenu_div">
         <Sidemenu name={name}/>
         </div>
-        <MenuBar name={name} contactList={contact}/>
+        <MenuBar name={name} contactList={contact} />
         </div>
         <div className="contact_container">
       <div className="contact_list_div">
@@ -58,7 +57,7 @@ const Home = ({location}) => {
                   <div className="cf_content_header">
                       <h3>Contacts</h3>
                   </div>
-                      <ContactList contactList={contact} />
+                      <ContactList contactList={contact}/>
               </div>
           </div>
           <span className="contact_display">

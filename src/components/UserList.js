@@ -6,6 +6,10 @@ const UserList = ({contactList}) => {
 
     const [name, setName] = useState('');
 
+    /*function reload(){
+        window.location.reload(true);
+    }*/
+
     return(
     <Link to={`/home?name=${name}`} target="_blank" className="link_remove">
     {contactList.map((contact, index) => (
