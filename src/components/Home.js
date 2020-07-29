@@ -52,30 +52,47 @@ const Home = ({location}) => {
         </div>
         <div className="contact_container">
       <div className="contact_list_div">
+      <div className="contact_header">
+      <div className="c_header">
+      <i className="address_book fa fa-address-book-o fa-2x"></i>
+      <div className="contact_header_div">
+      <p className="contact">Contacts<br /><span className="welcome_note">Welcome to Contact page</span></p>
+      </div>
+      <p className="sort"><span className="welcome_note">Sort by :</span> Date Created</p><i className="fa fa-caret-down"></i>
+      </div>
+      <div className="c_search">
+      <input type="text" className="contact_search_text" placeholder="search contacts"/><i className="search_field fa fa-search"></i>
+      <button className="add_button" value="Add Contact">Add Contact</button>
+      </div>
+      </div>
           <div className="cf_content_container">
               <div className="cf_content_card">
                   <div className="cf_content_header">
-                      <h3>Contacts</h3>
+                      <i className="grid_header fa fa-plus"></i>
+                      <p className="grid_header_basic">Basic Info</p>
+                      <p className="grid_header_company">Company</p>
                   </div>
                       <ContactList contactList={contact}/>
               </div>
           </div>
           <span className="contact_display">
+              <div className="contact_edit_header">
               <div className="contact_edit_img round_add"></div>
+              </div>
+              <div className="contact_edit_header_name">
+              <p className="col_h_name">{name}</p>
+              <p className="col_h_email">{name}@gmail.com</p>
+              </div>
               <div className="contact_name">
-                  <input type="text" className="textbox" placeholder="Contact Name" required/>
-                  <input type="text" className="textbox" placeholder="Phone Number" required/>
-                  <input type="text" className="textbox" placeholder="Email" required/>
-                  <input type="text" className="textbox" placeholder="Address" required/>
-                  <button className="save_button out">Save</button>
-                  <button className="save_button out">Cancel</button>
+                  <p className="textbox">Fullname:</p><p className="text_out">{name}</p>
+                  <p className="textbox">Email:</p><p className="text_out">{name}@gmail.com</p>
+                  <p className="textbox">Phone:</p><p className="text_out">+91 1234567890</p>
+                  <p className="textbox">Company:</p><p className="text_out">ABC LLC</p>
+                  <p className="textbox">Address:</p><p className="text_out">442, 3rd Cross Street, Chennai</p>
               </div>
             </span>
       </div>
       </div>
-      <div className="contact_add">
-      <button className="round add_button fa fa-plus"></button>
-  </div>
   </div>
     )
 }

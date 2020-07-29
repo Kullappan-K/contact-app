@@ -7,13 +7,13 @@ body{
     margin-left: 72px;
 }
 .contact_menu_div{
-    width: 94%;
+    width: 96%;
     height: 100%;
     position: relative;
     display: inline-block;
     background-color: white;
     z-index: 100;
-    margin-left: 75px;
+    margin-left: 50px;
 }
 .menu_container{
     position: relative;
@@ -21,12 +21,13 @@ body{
 .contact_menu_bar{
     position: relative;
     width: 100%;
-    height: 100px;
-    border-radius: 3px;
+    height: 60px;
+    display: inline-block;
+    padding: 20px;
     box-sizing: border-box;
     border: none;
     border-bottom: 1px solid #c2c2c2;
-    box-shadow: 1px 1px #c2c2c2;
+    box-shadow: 0px .5px #c2c2c2;
 }
 .contact_list_div{
     position: relative;
@@ -38,19 +39,37 @@ body{
     position: relative;
     padding-top: 20px;
     display: inline-block;
+    transform: translate(11%, 0%);
 }
 .cf_content_card{
     position: relative;
     width: 600px;
-  height: 150px;
-  background-color: #1E2B32;
   border-radius: 10px 10px;
 }
 .cf_content_header{
     position: relative;
-    border-radius: 10px 10px 0px 0px;
-  padding: 5px;
-  background-color: #2A3942;
+    height: 50px;
+    padding: 1px;
+  background-color: #f8f8f8;
+  color: black;
+}
+.grid_header{
+    position: relative;
+    width: 40px;
+    padding: 20px;
+    display: inline-block;
+}
+.grid_header_basic{
+    position: relative;
+    width: 300px;
+    color: #929291;
+    display: inline-block;
+}
+.grid_header_company{
+    position: relative;
+    width: 100px;
+    color: #929291;
+    display: inline-block;
 }
 h3{
     color: #FFFFFF;
@@ -86,9 +105,44 @@ h3{
     color: #fff;
     display: inline-block;
     padding-left: 10px;
-    border-top-right-radius: 10px 10px;
-    border-bottom-right-radius: 10px 10px;
-    background-color: #1E2B32;
+}
+.contact_edit_header{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+.contact_edit_header_name{
+    position: relative;
+    justify-content: center;
+}
+.col_h_name{
+    position: relative;
+    display: block;
+    font-size: large;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+.col_h_email{
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: x-small;
+    color: rgb(140 139 139);
+}
+
+.col_company{
+    position: relative;
+    display: inline-block;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+}
+.row{
+    position: relative;
+    padding: 20px;
+    align-items: center;
 }
 .row ::after{
     content: "";
@@ -99,13 +153,22 @@ h3{
     position: relative;
     display: inline-block;
     left: 20px;
+    font-size: large;
+    font-weight: bold;
+    color: black;
 }
 .col_email{
     width: 150px;
     position: relative;
-    left: 100px;
     display: inline-block;
-    font-size: smaller;
+    font-size: x-small;
+    color: rgb(214, 212, 212);
+}
+.contact_basic_info{
+    width: 300px;
+    padding: 10px;
+    display: inline-block;
+    margin-left: 10px;
 }
 .round{
     position: relative;
@@ -113,7 +176,7 @@ h3{
     height: 50px;
     border-radius: 100%;
     display: inline-block;
-    border: 1px solid white;
+    border: 1px solid black;
 }
 .col_edit, .col_chat, .col_view{
     position: relative;
@@ -124,7 +187,6 @@ h3{
     cursor: pointer;
     border: none;
     background-color: transparent;
-    color: white;
 }
 .col_edit, .col_chat, .col_view:focus{
     outline: none;
@@ -144,11 +206,10 @@ h3{
     height: 500px;
     display: inline-block;
     float: right;
-    margin-left: 50px;
-    border: 1px solid black;
-    background-color: #1E2B32;
-    border: 10px solid #1E2B32;
-    border-radius: 50px;
+    margin-left: 100px;
+    margin-top: 20px;
+    background-color: #f8f8f8;
+    box-shadow: 1px 1px 5px rgb(176, 176, 176);
 }
 .hide{
     display: none;
@@ -164,14 +225,29 @@ h3{
     margin-right: 70px;
 }
 .add_button{
+    position: relative;
+    width: 125px;
+    height: 35px;
+    background-image: linear-gradient(to left,rgb(240, 132, 222), rgb(247, 182, 99));
+    border: none;
+    border-radius: 5px;
     color: white;
-    background-color: red;
-    border: 2px solid red;
+    font-weight: bold;
+    margin-left: 20px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 20px rgb(235, 238, 240);
+}
+.search_field{
+    margin-left: -20px;
+}
+.add_button::before{
+    content: "+";
+    color: white;
+    margin-right: 5px;
 }
 .contact_edit_img{
     position: absolute;
     align-items: center;
-    border: 1px solid white;
 }
 .round_add{
     position: relative;
@@ -179,6 +255,12 @@ h3{
     height: 100px;
     border-radius: 100%;
     display: inline-block;
+    background-color: #ecde1a;
+}
+.round_add::before{
+    content: "A";
+    font-size: larger;
+    color: white;
 }
 .contact_name{
     position: relative;
@@ -186,14 +268,21 @@ h3{
     top: 30px;
 }
 .textbox{
-    width: 400px;
+    width: 200px;
     height: 20px;
     border: none;
-    color: white;
+    color: #a2a1a1;
     font-size: large;
-    padding: 20px;
-    background-color: transparent;
-    border-bottom:  1px solid white;
+    background: transparent;
+    display: inline-flex;
+    padding: 5px;
+    justify-content: flex-start;
+    margin-left: 50px;
+    border-bottom:  0.2px solid #f8f8f8;
+}
+.text_out{
+    position: relative;
+    display: inline-block;
 }
 .textbox:focus{
     outline: none;
@@ -218,17 +307,28 @@ h3{
 }
 .username{
     position: relative;
-    display: block;
-    width: 150px;
+    width: 200px;
     height: 30px;
-    padding: 15px;
-    background-color: red;
-    color: white;
     float: right;
-    font-size: large;
-    margin-right: 10%;
-    border: 1px solid red;
-    border-radius: 5px;
+    align-items: center;
+}
+.contact_search{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #f7f5f5;
+}
+.search_pad{
+    padding: 5px;
+}
+.icons_padding{
+    margin-right: 20px;
+}
+.icons_r_padding{
+    margin-left: 20px;
 }
 .drp-contact{
     display: none;
@@ -275,21 +375,93 @@ h3{
 }
 .contact_home{
     padding: 15px;
-    border: 1px solid white;
-    border-radius: 100%;
+}
+.sidebar{
+    margin-left: -10px;
+    margin-right: 10px;
+    border-left: 5px solid white;
+}
+.contact_menu{
+    height: 80px;
     margin: 10px;
 }
 .side_container{
     width: 50px;
     height: 700px;
     padding: 10px;
-    border: 1px solid red;
-    background-color: red;
+    border-right: 2px solid linear-gradient(to top, rgb(240, 132, 222), rgb(247, 182, 99));
+    background-image: linear-gradient(to top, rgb(240, 132, 222), rgb(247, 182, 99));
     color: white;
-    border-radius: 10px;
     cursor: pointer;
+    box-sizing: border-box;
+    box-shadow: 2px 1px rgb(226, 226, 226);
+}
+.contact_header{
+    position: relative;
+    height: 200px;
+    display: block;
+}
+.address_book{
+    display: inline-block;
+    color: white;
+    background-image: linear-gradient(to top, rgb(240, 132, 222), rgb(247, 182, 99));
+}
+.contact{
+    display: block;
+    height: 0px;
+    padding: 10px;
+    color: black;
+    font-size: x-large;
+    font-weight: bold;
+}
+.c_search{
+    width: 500px;
+    height: 200px;
+    position: relative;
+    display: inline-block;
+    transform: translate(13%, 5%);
+}
+.contact_search_text{
+    width: 250px;
+    height: 35px;
+    background-color: #f8f8f8;
+    border: 1px solid #f8f8f8;
+    color: black;
+    border-radius: 50px;
+}
+.contact_search_text::after{
+    content: "\f002";
+}
+::placeholder{
+    color: #a7aaaa;
+    padding: 10px;
+}
+.c_header{
+    position: relative;
+    height: 130px;
+    display: block;
+    transform: translate(2%, 5%);
+}
+.contact_header_div{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+}
+.welcome_note{
+    color: #cdcdce;
+    font-size: 15px;
+}
+.sort{
+    position: relative;
+    display: inline-block;
+    margin-left: px;
 }
 .sidemenu_link{
     color:white;
     text-decoration: none;
+}
+.checkbox_type{
+    width: 30px;
+    height: 20px;
 }
